@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#1C1C1C"
+        android:theme="@android:style/Theme.Black"
+        app:layout_constraintBottom_toBottomOf="@+id/sel"
+        app:layout_constraintTop_toBottomOf="@+id/sel">
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/radio1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:onClick="RadioClicked"
+                android:text="Normal WPT"
+                app:buttonTint="@color/buttonc" />
+
+            <RadioButton
+                android:id="@+id/radio2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="RadioClicked"
+                android:text="Half-Degree WPT"
+                app:buttonTint="@color/buttonc" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/inputLat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:hint=" "
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <EditText
+            android:id="@+id/inputLon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="38dp"
+            android:ems="10"
+            android:hint=" "
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputLat" />
+
+        <Button
+            android:id="@+id/N_button"
+            android:layout_width="66dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:background="#E33A2E"
+            android:text="N"
+            android:textSize="22sp"
+            app:backgroundTint="#E33A2E"
+            app:layout_constraintStart_toEndOf="@+id/inputLat"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <Button
+            android:id="@+id/S_button"
+            android:layout_width="66dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:background="#0076D5"
+            android:text="S"
+            android:textSize="22sp"
+            app:backgroundTint="#0076D5"
+            app:layout_constraintStart_toEndOf="@+id/N_button"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <Button
+            android:id="@+id/W_button"
+            android:layout_width="66dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:background="#DC9200"
+            android:text="W"
+            android:textSize="22sp"
+            app:backgroundTint="#DC9200"
+            app:layout_constraintStart_toEndOf="@+id/inputLon"
+            app:layout_constraintTop_toBottomOf="@+id/N_button" />
+
+        <Button
+            android:id="@+id/E_button"
+            android:layout_width="66dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:background="#0F9711"
+            android:text="E"
+            android:textSize="22sp"
+            app:backgroundTint="#0F9711"
+            app:layout_constraintStart_toEndOf="@+id/W_button"
+            app:layout_constraintTop_toBottomOf="@+id/S_button" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="16dp"
+            android:text="^ Always press mode before input ^"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radio_group" />
+
+        <TextView
+            android:id="@+id/sel"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/box2"
+            android:gravity="center"
+            android:text=" "
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/E_button"
+            app:layout_constraintStart_toStartOf="@+id/inputLon"
+            app:layout_constraintTop_toBottomOf="@+id/inputLon" />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/box"
+            android:gravity="center"
+            android:text=" "
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="@+id/sel"
+            app:layout_constraintStart_toStartOf="@+id/sel"
+            app:layout_constraintTop_toBottomOf="@+id/sel" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="16dp"
+            android:text="  - - -  *  ON BOTH  =  READY FOR INPUT"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/result" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="Latitude"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/inputLat"
+            app:layout_constraintTop_toTopOf="@+id/inputLat" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="8dp"
+            android:text=" "
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/inputLat"
+            app:layout_constraintTop_toTopOf="@+id/inputLat" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="Longitude"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/inputLon"
+            app:layout_constraintTop_toTopOf="@+id/inputLon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
